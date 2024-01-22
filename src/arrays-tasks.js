@@ -9,6 +9,7 @@
 
 /**
  * Creates an array of integers from the specified start to end (inclusive).
+ * Создание массива целых чисел от указанного начала до конца (включительно).
  *
  * @param {number} start - The first number of an array.
  * @param {number} end - The last number of an array.
@@ -20,8 +21,8 @@
  *    getIntervalArray(0, 100) => [ 0, 1, 2, ..., 100 ]
  *    getIntervalArray(3, 3) => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  return Array.from({ length: end - start + 1 }, (_, index) => start + index);
 }
 
 /**
