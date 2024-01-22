@@ -308,6 +308,8 @@ function flattenArray(nestedArray) {
 /**
  * Projects each element of the specified array to a sequence
  * and flattens the resulting sequences into one array.
+ * Проектирует каждый элемент заданного массива в последовательность
+ * и выравнивает результирующие последовательности в один массив.
  *
  * @param {array} arr - The input array
  * @param {Function} childrenSelector - A transform function to apply to each element
@@ -318,8 +320,8 @@ function flattenArray(nestedArray) {
  *   selectMany([[1, 2], [3, 4], [5, 6]], (x) => x) =>   [ 1, 2, 3, 4, 5, 6 ]
  *   selectMany(['one','two','three'], (x) => x.split('')) =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
-function selectMany(/* arr, childrenSelector */) {
-  throw new Error('Not implemented');
+function selectMany(arr, childrenSelector) {
+  return arr.flatMap(childrenSelector);
 }
 
 /**
