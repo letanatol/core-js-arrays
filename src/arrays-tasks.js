@@ -346,6 +346,7 @@ function calculateBalance(arr) {
 
 /**
  * Breaks an array into chunks of the specified size.
+ * Разбивает массив на части заданного размера.
  *
  * @param {array} arr - The array to be broken into chunks.
  * @param {number} chunkSize - The size of each chunk.
@@ -356,8 +357,15 @@ function calculateBalance(arr) {
  *    createChunks(['a', 'b', 'c', 'd', 'e'], 2) => [['a', 'b'], ['c', 'd'], ['e']]
  *    createChunks([10, 20, 30, 40, 50], 1) => [[10], [20], [30], [40], [50]]
  */
-function createChunks(/* arr, chunkSize */) {
-  throw new Error('Not implemented');
+function createChunks(arr, chunkSize) {
+  const sliceChunk = (index) => {
+    if (index >= arr.length) return [];
+
+    const chunk = arr.slice(index, index + chunkSize);
+    return [chunk, ...sliceChunk(index + chunkSize)];
+  };
+
+  return sliceChunk(0);
 }
 
 /**
