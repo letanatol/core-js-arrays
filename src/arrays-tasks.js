@@ -273,6 +273,7 @@ function distinct(arr) {
 
 /**
  * Creates an n-dimensional array and fills it with zeros.
+ * Создает n-мерный массив и заполняет его нулями.
  *
  * @param {number} n - Depth of outter array (n > 0).
  * @param {number} size - Length of all arrays (size > 0).
@@ -284,8 +285,8 @@ function distinct(arr) {
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(/* n, size */) {
-  throw new Error('Not implemented');
+function createNDimensionalArray(n, size) {
+  return Array(size).fill(n > 1 ? createNDimensionalArray(n - 1, size) : 0);
 }
 
 /**
