@@ -28,6 +28,8 @@ function getIntervalArray(start, end) {
 /**
  * Returns a new array where each element is the sum of the corresponding elements
  * from two arrays. Arrays can have different lengths.
+ * Возвращает новый массив, в котором каждый элемент является суммой соответствующих элементов
+ * из двух массивов. Массивы могут иметь разную длину.
  *
  * @param {array} arr1 - The first array.
  * @param {array} arr2 - The second array.
@@ -38,8 +40,11 @@ function getIntervalArray(start, end) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  return Array.from(
+    { length: Math.max(arr1.length, arr2.length) },
+    (_, index) => (arr1[index] || 0) + (arr2[index] || 0)
+  );
 }
 
 /**
