@@ -49,6 +49,7 @@ function sumArrays(arr1, arr2) {
 
 /**
  * Returns an index of the specified element in array or -1 if element is not found.
+ * Возвращает индекс указанного элемента в массиве или -1, если элемент не найден.
  *
  * @param {array} arr - The input array.
  * @param {any} value - Element to search.
@@ -59,8 +60,8 @@ function sumArrays(arr1, arr2) {
  *    findElement(['Array', 'Number', 'string'], 'Date') => -1
  *    findElement([0, 1, 2, 3, 4, 5], 5) => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  return arr.indexOf(value);
 }
 
 /**
