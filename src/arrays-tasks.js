@@ -328,6 +328,9 @@ function selectMany(arr, childrenSelector) {
  * Every month, you record your income and expenses.
  * Expenses may be greater than income.
  * You need to calculate the final balance.
+ * Каждый месяц вы записываете свои доходы и расходы.
+ * Расходы могут быть больше, чем доход.
+ * Вам нужно рассчитать окончательный баланс.
  *
  * @param {array} arr - The input array [[income, expence], ...]
  * @return {number} - The final balance.
@@ -337,8 +340,8 @@ function selectMany(arr, childrenSelector) {
  *   calculateBalance([ [ 10, 8 ], [ 1, 5 ] ])  => (10 - 8) + (1 - 5) = 2 + -4 = -2
  *   calculateBalance([]) => 0
  */
-function calculateBalance(/* arr */) {
-  throw new Error('Not implemented');
+function calculateBalance(arr) {
+  return arr.reduce((acc, item) => acc + item[0] - item[1], 0);
 }
 
 /**
