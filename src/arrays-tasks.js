@@ -118,6 +118,8 @@ function getStringsLength(arr) {
 /**
  * Returns the average of all items in the specified array of numbers.
  * The result should be rounded to two decimal places.
+ * Возвращает среднее значение всех элементов в указанном массиве чисел.
+ * Результат округляется до двух десятичных знаков.
  *
  * @param {array} arr - The input array
  * @return {number} - The average of all items
@@ -129,8 +131,11 @@ function getStringsLength(arr) {
  *   getAverage([ 1, 10, 100, 1000 ])  => 277,75
  *   getAverage([ 2, 3, 3 ])  => 2,67
  */
-function getAverage(/* arr */) {
-  throw new Error('Not implemented');
+function getAverage(arr) {
+  if (arr.length === 0) return 0;
+  const average = arr.reduce((acc, item) => acc + item, 0) / arr.length;
+
+  return Math.round(average * 100) / 100;
 }
 
 /**
