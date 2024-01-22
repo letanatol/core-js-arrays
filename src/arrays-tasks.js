@@ -370,6 +370,7 @@ function createChunks(arr, chunkSize) {
 
 /**
  * Generates an array of odd numbers of the specified length.
+ * Генерирует массив нечётных чисел указанной длины
  *
  * @param {number} len - The length of an array.
  * @return {array} - An array of odd numbers.
@@ -380,8 +381,8 @@ function createChunks(arr, chunkSize) {
  *    generateOdds(2) => [ 1, 3 ]
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  return Array.from({ length: len }, (_, index) => index * 2 + 1);
 }
 
 /**
