@@ -140,6 +140,7 @@ function getAverage(arr) {
 
 /**
  * Checks if all strings in an array have the same length.
+ * Проверяет, все ли строки в массиве имеют одинаковую длину.
  *
  * @param {array} arr - The array of strings to be checked.
  * @return {boolean} - True if all strings have the same length, false otherwise.
@@ -148,8 +149,10 @@ function getAverage(arr) {
  *    isSameLength(['orange', 'banana', 'cherry']) => true
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
-function isSameLength(/* arr */) {
-  throw new Error('Not implemented');
+function isSameLength(arr) {
+  const itemLength = arr[0].length;
+
+  return arr.every((item) => item.length === itemLength);
 }
 
 /**
