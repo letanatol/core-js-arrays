@@ -222,6 +222,8 @@ function getTail(arr, n) {
 /**
  * Returns the doubled array - elements of the specified array
  * are repeated twice using original order.
+ * Возвращает удвоенный массив - элементы указанного массива
+ * повторяются дважды с использованием исходного порядка.
  *
  * @param {array} arr - The input array.
  * @return {array} - The doubled array.
@@ -231,8 +233,9 @@ function getTail(arr, n) {
  *    doubleArray([0, 1, 2, 3, 4, 5]) => [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
  *    doubleArray([]) => []
  */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
+function doubleArray(arr) {
+  if (arr.length === 0) return [];
+  return arr.concat(arr);
 }
 
 /**
