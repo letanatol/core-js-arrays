@@ -86,6 +86,8 @@ function findAllOccurrences(arr, item) {
 /**
  * Removes falsy values from the specified array.
  * Falsy values: false, null, 0, "", undefined, and NaN.
+ * Удаление неверных значений из указанного массива.
+ * Неверные значения: false, null, 0, "", неопределенные и NaN.
  *
  * @param {array} arr - The input array.
  * @return {array} - The array without falsy values.
@@ -95,8 +97,8 @@ function findAllOccurrences(arr, item) {
  *    removeFalsyValues([ 1, 2, 3, 4, 5, 'false' ]) => [ 1, 2, 3, 4, 5, 'false' ]
  *    removeFalsyValues([ false, 0, NaN, '', undefined ]) => [ ]
  */
-function removeFalsyValues(/* arr */) {
-  throw new Error('Not implemented');
+function removeFalsyValues(arr) {
+  return arr.filter((item) => Boolean(item));
 }
 
 /**
