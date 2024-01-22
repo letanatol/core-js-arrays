@@ -256,6 +256,7 @@ function toStringList(arr) {
 
 /**
  * Returns array containing only unique values from the specified array.
+ * Возвращает массив, содержащий только уникальные значения из указанного массива.
  *
  * @param {array} arr - The input array.
  * @return {array} - The array with unique values.
@@ -266,8 +267,8 @@ function toStringList(arr) {
  *   distinct([ 1, 1, 2, 2, 3, 3, 4, 4]) => [ 1, 2, 3, 4]
  *   distinct([]) => []
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  return [...new Set(arr)];
 }
 
 /**
