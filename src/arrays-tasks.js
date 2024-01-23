@@ -387,6 +387,7 @@ function generateOdds(len) {
 
 /**
  * Returns an element from the multidimensional array by the specified indices.
+ * Возвращает элемент из многомерного массива по заданным индексам.
  *
  * @param {array} arr - The input multidimensional array
  * @param {array} indices - The array of indices
@@ -397,8 +398,15 @@ function generateOdds(len) {
  *   getElementByIndices(['one','two','three'], [2]) => 'three'  (arr[2])
  *   getElementByIndices([[[ 1, 2, 3]]], [ 0, 0, 1 ]) => 2        (arr[0][0][1])
  */
-function getElementByIndices(/* arr, indices */) {
-  throw new Error('Not implemented');
+function getElementByIndices(arr, indices) {
+  const index = indices[0];
+  const indicesArray = indices.slice(1);
+
+  if (index >= 0) {
+    if (indicesArray.length === 0) return arr[index];
+    return getElementByIndices(arr[index], indicesArray);
+  }
+  return null;
 }
 
 /**
