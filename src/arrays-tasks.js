@@ -477,6 +477,7 @@ function getIndicesOfOddNumbers(numbers) {
 
 /**
  * Returns the array of RGB Hex strings from the specified array of numbers.
+ * Возвращает массив строк RGB Hex из заданного массива чисел.
  *
  * @param {array} arr - The input array.
  * @return {array} - The array of RGB Hex strings.
@@ -485,8 +486,10 @@ function getIndicesOfOddNumbers(numbers) {
  *    getHexRGBValues([ 0, 255, 16777215]) => [ '#000000', '#0000FF', '#FFFFFF' ]
  *    getHexRGBValues([]) => []
  */
-function getHexRGBValues(/* arr */) {
-  throw new Error('Not implemented');
+function getHexRGBValues(arr) {
+  return arr.map(
+    (number) => `#${number.toString(16).padStart(6, '0').toUpperCase()}`
+  );
 }
 
 /**
