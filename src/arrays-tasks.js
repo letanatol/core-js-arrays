@@ -477,6 +477,7 @@ function getIndicesOfOddNumbers(numbers) {
 
 /**
  * Returns the array of RGB Hex strings from the specified array of numbers.
+ * Возвращает массив строк RGB Hex из заданного массива чисел.
  *
  * @param {array} arr - The input array.
  * @return {array} - The array of RGB Hex strings.
@@ -485,12 +486,15 @@ function getIndicesOfOddNumbers(numbers) {
  *    getHexRGBValues([ 0, 255, 16777215]) => [ '#000000', '#0000FF', '#FFFFFF' ]
  *    getHexRGBValues([]) => []
  */
-function getHexRGBValues(/* arr */) {
-  throw new Error('Not implemented');
+function getHexRGBValues(arr) {
+  return arr.map(
+    (number) => `#${number.toString(16).padStart(6, '0').toUpperCase()}`
+  );
 }
 
 /**
  * Returns the n largest values from the specified array
+ * Возвращает n наибольших значений из заданного массива
  *
  * @param {array} arr - The input array
  * @param {number} n - Number of maximum values.
@@ -503,8 +507,10 @@ function getHexRGBValues(/* arr */) {
  *   getMaxItems([ 10, 2, 7, 5, 3, -5 ], 3) => [ 10, 7, 5 ]
  *   getMaxItems([ 10, 10, 10, 10 ], 3) => [ 10, 10, 10 ]
  */
-function getMaxItems(/* arr, n */) {
-  throw new Error('Not implemented');
+function getMaxItems(arr, n) {
+  const arraySort = arr.slice().sort((a, b) => b - a);
+
+  return arraySort.slice(0, n);
 }
 
 /**
