@@ -429,6 +429,7 @@ function getFalsyValuesCount(arr) {
 
 /**
  * Creates an identity matrix of the specified size.
+ * Создает матрицу идентификации указанного размера.
  *
  * @param {number} n - A size of the matrix.
  * @return {array} - An identity matrix.
@@ -445,8 +446,14 @@ function getFalsyValuesCount(arr) {
  *                              [0,0,0,1,0],
  *                              [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  const arrayOne = Array.from({ length: n }, (_, indexArrayOne) => {
+    const arrayTwo = Array.from({ length: n }, (__, indexArrayTwo) => {
+      return indexArrayOne === indexArrayTwo ? 1 : 0;
+    });
+    return arrayTwo;
+  });
+  return arrayOne;
 }
 
 /**
