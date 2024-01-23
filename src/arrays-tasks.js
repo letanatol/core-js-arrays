@@ -411,6 +411,7 @@ function getElementByIndices(arr, indices) {
 
 /**
  * Returns the number of all falsy values in the specified array.
+ * Возвращает число всех неверных значений в указанном массиве.
  *
  * @param {array} arr - The input array.
  * @return {number} - The number of all falsy values.
@@ -421,8 +422,9 @@ function getElementByIndices(arr, indices) {
  *  getFalsyValuesCount([ -1, 'false', null, 0 ]) => 2
  *  getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]) => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  if (arr.length === 0) return 0;
+  return arr.filter((item) => Boolean(!item)).length;
 }
 
 /**
