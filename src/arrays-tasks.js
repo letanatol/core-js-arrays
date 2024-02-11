@@ -532,6 +532,7 @@ function findCommonElements(arr1, arr2) {
 
 /**
  * Finds the length of the longest increasing subsequence of a given array of integers.
+ * Поиск длины самой длинной возрастающей подпоследовательности заданного массива целых чисел
  *
  * @param {array} nums - The array of integers.
  * @return {number} - The length of the longest increasing subsequence.
@@ -541,10 +542,33 @@ function findCommonElements(arr1, arr2) {
  *    findLongestIncreasingSubsequence([3, 10, 2, 1, 20]) => 2
  *    findLongestIncreasingSubsequence([50, 3, 10, 7, 40, 80]) => 3
  */
-function findLongestIncreasingSubsequence(/* nums */) {
-  throw new Error('Not implemented');
-}
+function findLongestIncreasingSubsequence(nums) {
+  const tracks = [];
+  let count = 1;
 
+  nums.map((_, index, arrayNums) => {
+    const lastIndex = arrayNums.length - 1;
+
+    count =
+      arrayNums[index] > arrayNums[index - 1]
+        ? count + 1
+        : (tracks.push(count), 1);
+
+    if (index === lastIndex) {
+      tracks.push(count);
+      count = 1;
+    }
+
+    return null;
+  });
+
+  const maxTrack = tracks.reduce(
+    (max, value) => Math.max(max, value),
+    -Infinity
+  );
+
+  return maxTrack;
+}
 /**
  * Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, three third items etc.
