@@ -614,6 +614,7 @@ function shiftArray(arr, n) {
 
 /**
  * Sorts digit names.
+ * Сортировать цифровые имена
  *
  * @param {array} arr - The input array.
  * @return {array} - Sorted array.
@@ -625,8 +626,27 @@ function shiftArray(arr, n) {
  *   sortDigitNamesByNumericOrder([ 'nine','eight','nine','eight' ]) => [ 'eight','eight','nine','nine']
  *   sortDigitNamesByNumericOrder([ 'one','one','one','zero' ]) => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  const arrayNames = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ];
+
+  const objectNamesNumbers = arrayNames.reduce((acc, item, index) => {
+    acc[item] = index;
+
+    return acc;
+  }, {});
+
+  return arr.sort((a, b) => objectNamesNumbers[a] - objectNamesNumbers[b]);
 }
 
 /**
