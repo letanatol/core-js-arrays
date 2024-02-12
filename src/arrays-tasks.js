@@ -653,6 +653,9 @@ function sortDigitNamesByNumericOrder(arr) {
  * Swaps the head and tail of the specified array:
  * the head (first half) of array move to the end, the tail (last half) move to the start.
  * The middle element (if exists) leave on the same position. *
+ * Заменяет головку и хвост указанного массива:
+ * голова (первая половина) массива перемещается в конец, хвост (последняя половина) - в начало.
+ * Средний элемент (если существует) остается в том же положении.
  *
  * @param {array} arr - The input array.
  * @return {array} - The swapped array.
@@ -668,8 +671,18 @@ function sortDigitNamesByNumericOrder(arr) {
  *   swapHeadAndTail([]) => []
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+function swapHeadAndTail(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const middleIndex = Math.floor(arr.length / 2);
+  const headArray = arr.slice(0, middleIndex);
+  const tailArray = arr.slice(-middleIndex);
+
+  const middleArray = arr.length % 2 === 0 ? [] : [arr[middleIndex]];
+
+  return tailArray.concat(middleArray, headArray);
 }
 
 module.exports = {
